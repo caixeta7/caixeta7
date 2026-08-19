@@ -192,3 +192,4 @@ Atualmente cursando **Pós-graduação em Segurança da Informação** (Senac), 
 <p align="center">
   <sub>⭐ Star nos repositórios que achar úteis • 🔄 Perfil atualizado automaticamente via GitHub Actions • 🛡️ Segurança e qualidade em primeiro lugar</sub>
 </p>
+
