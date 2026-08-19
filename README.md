@@ -170,3 +170,4 @@ aprendendo: "Rust, Kubernetes, Arquitetura de Sistemas Distribuídos"
 <p align="center">
   <sub>⭐ Star nos repositórios que achar úteis • 🔄 Atualizado automaticamente via GitHub Actions</sub>
 </p>
+
