@@ -1,0 +1,59 @@
+name: Full Profile Update
+
+on:
+  schedule:
+    - cron: '0 3 * * *'  # Daily at 3 AM UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - '.github/workflows/*.yml'
+
+jobs:
+  update-profile:
+    name: Update full profile
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Update activity section
+        uses: jamesgeorge007/github-activity-readme@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          COMMIT_MSG: "chore: update activity section"
+          MAX_LINES: 8
+          EXCLUDE: "caixeta7/caixeta7"
+
+      - name: Update GitHub stats (forces cache refresh)
+        run: |
+          # Stats are served from vercel.app which caches, but we can trigger a refresh
+          # by ensuring the README has a timestamp comment
+          DATE=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+          sed -i "/<!--STATS_UPDATED-->/d" README.md
+          sed -i "s/<!--START_SECTION:activity-->/<!--START_SECTION:activity-->\n<!--STATS_UPDATED: $DATE -->/" README.md
+
+      - name: Update top languages (using a custom approach)
+        run: |
+          # We'll use a simple script to fetch and update language stats
+          # This is optional since vercel.app handles it
+          echo "Language stats auto-updated by vercel.app"
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if ! git diff --staged --quiet; then
+            git commit -m "chore: auto-update profile README [skip ci]"
+            git push
+          else
+            echo "No changes to commit"
+          fi
