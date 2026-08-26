@@ -2,6 +2,8 @@
 **Engenheiro de Software · Automação & Identidade · Segurança da Informação**  
 São Paulo, SP • [caixeta2602@gmail.com](mailto:caixeta2602@gmail.com) • [LinkedIn](https://www.linkedin.com/in/matheus-caixeta-5287ba201/) • [GitHub](https://github.com/caixeta7)
 
+![Profile Banner](dark.svg#gh-dark-mode-only)
+
 ---
 
 ## 👨‍💻 Sobre Mim
