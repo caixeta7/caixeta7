@@ -29,21 +29,21 @@
 <div align="center">
 
 ```text
-┌─────────────────────────────────────────────────────────────────────┐
-│                         SYSTEM PROFILE                              │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  NAME       : Matheus Caixeta Reis                                  │
-│  ROLE       : Software Engineer / IT Analyst                        │
-│  LOCATION   : São Paulo, Brazil                                     │
-│                                                                     │
-│  FOCUS      : Identity & Access · Automation · Security             │
-│  STACK      : PowerShell · Python · TypeScript · React              │
-│  INFRA      : Active Directory · Entra ID · Windows · Linux         │
-│  PRINCIPLE  : Automate what can be automated. Measure what matters. │
-│                                                                     │
-│  STATUS     : ● ONLINE                                              │
-└─────────────────────────────────────────────────────────────────────┘
+                                                            ┌─────────────────────────────────────────────────────────────────────┐
+                                                            │                         SYSTEM PROFILE                              │
+                                                            ├─────────────────────────────────────────────────────────────────────┤
+                                                            │                                                                     │
+                                                            │  NAME       : Matheus Caixeta Reis                                  │
+                                                            │  ROLE       : Software Engineer / IT Analyst                        │
+                                                            │  LOCATION   : São Paulo, Brazil                                     │
+                                                            │                                                                     │
+                                                            │  FOCUS      : Identity & Access · Automation · Security             │
+                                                            │  STACK      : PowerShell · Python · TypeScript · React              │
+                                                            │  INFRA      : Active Directory · Entra ID · Windows · Linux         │
+                                                            │  PRINCIPLE  : Automate what can be automated. Measure what matters. │
+                                                            │                                                                     │
+                                                            │  STATUS     : ● ONLINE                                              │
+                                                            └─────────────────────────────────────────────────────────────────────┘
 ```
 
 </div>
