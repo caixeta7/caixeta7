@@ -268,3 +268,4 @@ Base reutilizável para desenvolvimento de aplicações modernas.
 <img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&animation=twinkling&color=0:238636,50:161b22,100:0d1117" width="100%"/>
 
 </div>
+
