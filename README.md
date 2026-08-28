@@ -33,9 +33,9 @@
 │                         SYSTEM PROFILE                              │
 ├─────────────────────────────────────────────────────────────────────┤
 │                                                                     │
-│  NAME       : Matheus Caixeta Reis                                 │
+│  NAME       : Matheus Caixeta Reis                                  │
 │  ROLE       : Software Engineer / IT Analyst                        │
-│  LOCATION   : São Paulo, Brazil                                    │
+│  LOCATION   : São Paulo, Brazil                                     │
 │                                                                     │
 │  FOCUS      : Identity & Access · Automation · Security             │
 │  STACK      : PowerShell · Python · TypeScript · React              │
@@ -258,7 +258,7 @@ Base reutilizável para desenvolvimento de aplicações modernas.
 ```text
 ╔══════════════════════════════════════════════════════════════════════╗
 ║                                                                      ║
-║   AUTOMATE.  SECURE.  ENGINEER.  OBSERVE.  IMPROVE.                 ║
+║   AUTOMATE.  SECURE.  ENGINEER.  OBSERVE.  IMPROVE.                  ║
 ║                                                                      ║
 ║   "Good systems don't depend on heroics."                            ║
 ║                                                                      ║
