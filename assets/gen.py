@@ -28,7 +28,11 @@ INVADER = [  # dois frames, 11x8
     ["00100000100", "10010001001", "10111111101", "11101110111",
      "11111111111", "01111111110", "00100000100", "01000000010"],
 ]
-GLYPHS = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ"
+GLYPHS = "01{}[]()<>=;:/*+-_&|!?$#%~^.,abcdefxyzABCDEF0123456789"
+
+
+def esc(c):  # caracteres especiais de XML
+    return {"<": "&lt;", ">": "&gt;", "&": "&amp;"}.get(c, c)
 
 
 def pixels(rows, x0, y0, size, cls=""):
@@ -57,7 +61,7 @@ def header(w=960, h=300):
             op = round((j + 1) / n_chars, 2)
             fill = BRIGHT if j == n_chars - 1 else GREEN
             chars.append(f'<tspan x="{i * col_w + 8}" dy="16" fill="{fill}" '
-                         f'fill-opacity="{op}">{random.choice(GLYPHS)}</tspan>')
+                         f'fill-opacity="{op}">{esc(random.choice(GLYPHS))}</tspan>')
         rain.append(f'<text class="drop" style="animation-duration:{dur:.1f}s;'
                     f'animation-delay:{delay:.1f}s">{"".join(chars)}</text>')
 
@@ -76,7 +80,7 @@ def header(w=960, h=300):
     tx = (w - tlen - 16) // 2
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Matheus Caixeta Reis — IAM, Segurança da Informação e Automação">
 <style>
-  .drop {{ font: 14px "MS Gothic","Noto Sans Mono CJK JP","Osaka",monospace; animation: fall linear infinite; }}
+  .drop {{ font: 600 14px "JetBrains Mono","Cascadia Code",Consolas,monospace; animation: fall linear infinite; }}
   @keyframes fall {{ from {{ transform: translateY(-{n_chars * 16}px) }} to {{ transform: translateY({h}px) }} }}
   .name rect {{ fill: {GREEN}; }}
   .ghost-r rect {{ fill: #ff0055; }} .ghost-c rect {{ fill: #00e5ff; }}
@@ -111,7 +115,7 @@ def header(w=960, h=300):
 </svg>'''
 
 
-def footer(w=960, h=150):
+def footer(w=960, h=185):
     size, cols, gap = 4, 8, 64
     row_w = (cols - 1) * gap + 11 * size
     x0 = (w - row_w) // 2

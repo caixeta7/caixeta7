@@ -155,13 +155,13 @@ function draw() {
 
 // chuva matrix no fundo (canvas separado, rastro por fade)
 const rc = document.getElementById("rain").getContext("2d");
-const GLYPHS = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ";
+const GLYPHS = "01{}[]()<>=;:/*+-_&|!?$#%~^.,abcdefxyzABCDEF0123456789";
 const drops = Array.from({ length: W / 12 }, () => Math.random() * -H);
 let rainTimer = 0;
 function rain(dt) {
   rainTimer += dt; if (rainTimer < .06) return; rainTimer = 0;
   rc.fillStyle = "rgba(2,10,4,.18)"; rc.fillRect(0, 0, W, H);
-  rc.fillStyle = "rgba(0,255,65,.35)"; rc.font = "11px monospace";
+  rc.fillStyle = "rgba(0,255,65,.35)"; rc.font = "bold 11px Consolas, monospace";
   drops.forEach((y, k) => {
     rc.fillText(GLYPHS[Math.random() * GLYPHS.length | 0], k * 12, y);
     drops[k] = y > H + Math.random() * 200 ? 0 : y + 12;
