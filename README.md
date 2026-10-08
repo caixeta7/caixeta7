@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=200&section=header&text=Matheus%20Caixeta%20Reis&fontSize=40&fontColor=ffffff&fontAlignY=38&desc=IAM%20%C2%B7%20Seguran%C3%A7a%20da%20Informa%C3%A7%C3%A3o%20%C2%B7%20Automa%C3%A7%C3%A3o&descAlignY=60&descSize=16&color=0:0d1117,50:161b22,100:238636" width="100%"/>
+<img src="assets/header.svg" width="100%" alt="Matheus Caixeta Reis — IAM, Segurança da Informação e Automação"/>
 
 <a href="https://matheuscaixetareis.com.br/"><img src="https://img.shields.io/badge/Site-matheuscaixetareis.com.br-0d1117?style=for-the-badge&logo=googlechrome&logoColor=58A6FF"/></a>
 <a href="https://www.linkedin.com/in/matheus-caixeta-5287ba201/"><img src="https://img.shields.io/badge/LinkedIn-Matheus%20Caixeta-0d1117?style=for-the-badge&logo=linkedin&logoColor=58A6FF"/></a>
@@ -58,6 +58,6 @@ No dia a dia trabalho com Active Directory, Microsoft Entra ID, PowerShell e Pyt
 <img height="165" src="https://github-readme-stats.vercel.app/api?username=caixeta7&show_icons=true&theme=github_dark&hide_border=true&locale=pt-br&hide_title=true&hide=contribs"/>
 <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=caixeta7&layout=compact&theme=github_dark&hide_border=true&langs_count=6&locale=pt-br&hide_title=true"/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=100&section=footer&color=0:238636,50:161b22,100:0d1117" width="100%"/>
+<img src="assets/footer.svg" width="100%" alt=""/>
 
 </div>
