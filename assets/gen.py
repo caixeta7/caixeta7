@@ -85,7 +85,7 @@ def header(w=960, h=300):
   @keyframes gr {{ 0%,86%,100% {{ opacity:0; transform:none }} 87% {{ opacity:.9; transform:translate(-6px,2px) }} 89% {{ opacity:.9; transform:translate(4px,-3px) }} 91% {{ opacity:0 }} }}
   @keyframes gc {{ 0%,86%,100% {{ opacity:0; transform:none }} 87% {{ opacity:.9; transform:translate(6px,-2px) }} 89% {{ opacity:.9; transform:translate(-4px,3px) }} 91% {{ opacity:0 }} }}
   .name {{ animation: boot 1.2s steps(6), jitter 5s steps(1) infinite 1.2s; filter: drop-shadow(0 0 6px {GREEN}); }}
-  @keyframes boot {{ 0% {{ opacity:0 }} 30% {{ opacity:1 }} 45% {{ opacity:.2 }} 60%,100% {{ opacity:1 }} }}
+  @keyframes boot {{ 0%,10% {{ opacity:1 }} 20% {{ opacity:0 }} 30% {{ opacity:1 }} 45% {{ opacity:.2 }} 60%,100% {{ opacity:1 }} }}
   @keyframes jitter {{ 0%,86%,92%,100% {{ transform:none }} 88% {{ transform:translateX(3px) skewX(-8deg) }} 90% {{ transform:translateX(-2px) }} }}
   .lock rect {{ fill: {GREEN}; }} .lock {{ animation: pulse 2.4s ease-in-out infinite; filter: drop-shadow(0 0 6px {GREEN}); }}
   @keyframes pulse {{ 50% {{ opacity: .55 }} }}
