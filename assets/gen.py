@@ -133,12 +133,15 @@ def footer(w=960, h=150):
   @keyframes patrol {{ from {{ transform: translateX(-200px) }} to {{ transform: translateX(200px) }} }}
   .shot {{ animation: shoot 1s linear infinite; }}
   @keyframes shoot {{ from {{ transform: translateY(0); opacity:1 }} to {{ transform: translateY(-90px); opacity:0 }} }}
+  .play {{ font: 700 13px "JetBrains Mono",Consolas,monospace; fill: {GREEN}; animation: blink 1s steps(1) infinite; }}
+  @keyframes blink {{ 50% {{ opacity: 0 }} }}
   @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; }} }}
 </style>
 <defs><g id="i0">{pixels(INVADER[0], 0, 0, size)}</g><g id="i1">{pixels(INVADER[1], 0, 0, size)}</g></defs>
 <rect width="{w}" height="{h}" fill="{BG}"/>
 <g class="fleet" filter="drop-shadow(0 0 3px #00ff41)">{"".join(rows)}</g>
 <g class="ship" fill="{GREEN}">{pixels(ship, w // 2 - 22, h - 26, 4)}<rect class="shot" x="{w // 2 - 2}" y="{h - 40}" width="4" height="10"/></g>
+<text class="play" x="{w - 20}" y="{h - 12}" text-anchor="end">▶ CLIQUE PARA JOGAR</text>
 </svg>'''
 
 

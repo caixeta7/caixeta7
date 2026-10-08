@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Invaders · caixeta7</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+  :root { --g: #00ff41; --bg: #020a04; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--g);
+    font-family: "Press Start 2P", ui-monospace, Consolas, monospace; overflow: hidden; }
+  #stage { position: fixed; inset: 0; display: grid; place-items: center; }
+  #wrap { position: relative; width: min(100vw, calc(100dvh * 4 / 3)); aspect-ratio: 4 / 3; }
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated;
+    touch-action: none; cursor: crosshair; }
+  #wrap::after { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: repeating-linear-gradient(#0000 0 2px, #0006 2px 4px),
+                radial-gradient(#0000 55%, #000c); }
+  .hud { position: absolute; left: 0; right: 0; top: 0; display: flex; justify-content: space-between;
+    padding: max(10px, env(safe-area-inset-top)) 16px 0; font-size: clamp(9px, 2.2vw, 14px);
+    text-shadow: 0 0 6px var(--g); pointer-events: none; }
+  #msg { position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
+    font-size: clamp(10px, 2.6vw, 18px); line-height: 2; text-shadow: 0 0 8px var(--g); pointer-events: none; }
+  #msg[hidden] { display: none; }
+  .blink { animation: blink 1s steps(1) infinite; }
+  @keyframes blink { 50% { opacity: 0; } }
+  a.back { position: fixed; left: 16px; bottom: max(12px, env(safe-area-inset-bottom)); color: var(--g);
+    font-size: 10px; text-decoration: none; opacity: .7; z-index: 2; }
+  a.back:hover, a.back:focus-visible { opacity: 1; text-decoration: underline; }
+  @media (prefers-reduced-motion: reduce) { .blink { animation: none; } }
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="wrap">
+    <canvas id="rain" width="480" height="360" aria-hidden="true"></canvas>
+    <canvas id="game" width="480" height="360" aria-label="Jogo Space Invaders: mova o mouse ou o dedo para controlar a nave"></canvas>
+    <div class="hud"><span>PONTOS <span id="score">000000</span></span><span>ONDA <span id="wave">1</span></span></div>
+    <div id="msg"><div>CAIXETA INVADERS<br><span class="blink">MOVA O MOUSE OU TOQUE PARA JOGAR</span></div></div>
+  </div>
+</div>
+<a class="back" href="https://github.com/caixeta7">← voltar ao perfil</a>
+
+<script>
+"use strict";
+const W = 480, H = 360, PX = 3;               // resolução lógica e tamanho do "pixel" dos sprites
+const INVADER = [
+  ["00100000100","00010001000","00111111100","01101110110","11111111111","10111111101","10100000101","00011011000"],
+  ["00100000100","10010001001","10111111101","11101110111","11111111111","01111111110","00100000100","01000000010"],
+];
+const SHIP = ["00000100000","00001110000","00001110000","01111111110","11111111111","11111111111"];
+const ROWS = [{ color: "#00ff41", pts: 30 }, { color: "#00e5ff", pts: 20 }, { color: "#ff0055", pts: 10 }];
+const COLS = 8, GAP_X = 48, GAP_Y = 34, IW = 11 * PX, IH = 8 * PX;
+
+// Pré-renderiza cada sprite/cor num canvas pequeno: desenhar 1 imagem é bem mais barato que N retângulos.
+function sprite(rows, color) {
+  const c = document.createElement("canvas");
+  c.width = rows[0].length * PX; c.height = rows.length * PX;
+  const x = c.getContext("2d"); x.fillStyle = color;
+  rows.forEach((r, y) => [...r].forEach((b, i) => b === "1" && x.fillRect(i * PX, y * PX, PX, PX)));
+  return c;
+}
+const invSprites = ROWS.map(r => INVADER.map(f => sprite(f, r.color)));
+const shipSprite = sprite(SHIP, "#00ff41");
+
+const cv = document.getElementById("game"), ctx = cv.getContext("2d");
+const $score = document.getElementById("score"), $wave = document.getElementById("wave"), $msg = document.getElementById("msg");
+
+let score = 0, wave = 0, invaders = [], fleetX = 0, dir = 1, frame = 0, stepTimer = 0;
+let bullets = [], particles = [], fireTimer = 0, playing = false, waveBanner = 0;
+const ship = { x: W / 2, y: H - 30, target: W / 2 };
+const keys = new Set();
+
+function newWave() {
+  wave++; $wave.textContent = wave;
+  invaders = [];
+  ROWS.forEach((r, row) => { for (let c = 0; c < COLS; c++) invaders.push({ row, col: c, alive: true }); });
+  fleetX = 0; dir = 1;
+  if (wave > 1) { waveBanner = 1.2; showMsg(`ONDA ${wave}`); }
+}
+function showMsg(t) { $msg.innerHTML = `<div>${t}</div>`; $msg.hidden = false; }
+
+const fleetLeft = () => (W - ((COLS - 1) * GAP_X + IW)) / 2;
+const invPos = i => ({ x: fleetLeft() + fleetX + i.col * GAP_X, y: 50 + i.row * GAP_Y });
+
+function stepFleet() {
+  const alive = invaders.filter(i => i.alive);
+  const xs = alive.map(i => invPos(i).x);
+  const step = 6 * dir;
+  if (Math.min(...xs) + step < 8 || Math.max(...xs) + IW + step > W - 8) dir = -dir;
+  else fleetX += step;
+  frame ^= 1;
+}
+
+function explode(x, y, color) {
+  for (let k = 0; k < 14; k++) {
+    const a = Math.random() * Math.PI * 2, s = 40 + Math.random() * 120;
+    particles.push({ x, y, vx: Math.cos(a) * s, vy: Math.sin(a) * s, life: .5 + Math.random() * .3, color });
+  }
+}
+
+function update(dt) {
+  // nave: segue o ponteiro com suavização; teclado move direto
+  if (keys.has("ArrowLeft") || keys.has("a")) ship.target -= 260 * dt;
+  if (keys.has("ArrowRight") || keys.has("d")) ship.target += 260 * dt;
+  ship.target = Math.max(20, Math.min(W - 20, ship.target));
+  ship.x += (ship.target - ship.x) * Math.min(1, dt * 14);
+
+  if (waveBanner > 0) { waveBanner -= dt; if (waveBanner <= 0) $msg.hidden = true; }
+
+  // frota anda em "passos" (estilo arcade); acelera com a onda e quando sobram poucos
+  const alive = invaders.filter(i => i.alive).length;
+  const interval = Math.max(.06, (.45 - wave * .04) * (0.35 + 0.65 * alive / invaders.length));
+  stepTimer += dt;
+  if (stepTimer >= interval) { stepTimer = 0; stepFleet(); }
+
+  // tiro automático
+  fireTimer -= dt;
+  if (playing && waveBanner <= 0 && fireTimer <= 0 && bullets.length < 3) {
+    bullets.push({ x: ship.x - 1, y: ship.y - 14 }); fireTimer = .28;
+  }
+  bullets.forEach(b => b.y -= 420 * dt);
+
+  for (const b of bullets) for (const i of invaders) {
+    if (!i.alive) continue;
+    const p = invPos(i);
+    if (b.x + 3 > p.x && b.x < p.x + IW && b.y < p.y + IH && b.y + 10 > p.y) {
+      i.alive = false; b.y = -99;
+      score += ROWS[i.row].pts; $score.textContent = String(score).padStart(6, "0");
+      explode(p.x + IW / 2, p.y + IH / 2, ROWS[i.row].color);
+      break;
+    }
+  }
+  bullets = bullets.filter(b => b.y > -20);
+
+  particles.forEach(p => { p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt; });
+  particles = particles.filter(p => p.life > 0);
+
+  if (invaders.every(i => !i.alive)) newWave();
+}
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  ctx.shadowColor = "#00ff41"; ctx.shadowBlur = 6;
+  for (const i of invaders) if (i.alive) { const p = invPos(i); ctx.drawImage(invSprites[i.row][frame], p.x, p.y); }
+  ctx.drawImage(shipSprite, Math.round(ship.x - shipSprite.width / 2), ship.y - 9);
+  ctx.fillStyle = "#d4ffd9";
+  bullets.forEach(b => ctx.fillRect(Math.round(b.x), Math.round(b.y), 3, 10));
+  ctx.shadowBlur = 0;
+  particles.forEach(p => { ctx.globalAlpha = Math.min(1, p.life * 2); ctx.fillStyle = p.color; ctx.fillRect(p.x | 0, p.y | 0, PX, PX); });
+  ctx.globalAlpha = 1;
+}
+
+// chuva matrix no fundo (canvas separado, rastro por fade)
+const rc = document.getElementById("rain").getContext("2d");
+const GLYPHS = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ";
+const drops = Array.from({ length: W / 12 }, () => Math.random() * -H);
+let rainTimer = 0;
+function rain(dt) {
+  rainTimer += dt; if (rainTimer < .06) return; rainTimer = 0;
+  rc.fillStyle = "rgba(2,10,4,.18)"; rc.fillRect(0, 0, W, H);
+  rc.fillStyle = "rgba(0,255,65,.35)"; rc.font = "11px monospace";
+  drops.forEach((y, k) => {
+    rc.fillText(GLYPHS[Math.random() * GLYPHS.length | 0], k * 12, y);
+    drops[k] = y > H + Math.random() * 200 ? 0 : y + 12;
+  });
+}
+
+// controles: mouse/touch via Pointer Events (um código pros dois)
+function toLogical(e) { const r = cv.getBoundingClientRect(); return (e.clientX - r.left) / r.width * W; }
+function start() { if (!playing) { playing = true; $msg.hidden = true; } }
+cv.addEventListener("pointermove", e => { ship.target = toLogical(e); start(); });
+cv.addEventListener("pointerdown", e => { ship.target = toLogical(e); start(); });
+addEventListener("keydown", e => { if (/^Arrow(Left|Right)$|^[ad]$/.test(e.key)) { keys.add(e.key); start(); e.preventDefault(); } });
+addEventListener("keyup", e => keys.delete(e.key));
+
+newWave();
+let last = performance.now();
+function loop(now) {
+  const dt = Math.min(.05, (now - last) / 1000); last = now;   // clamp: aba em segundo plano não "teleporta" o jogo
+  update(dt); draw(); rain(dt);
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>
