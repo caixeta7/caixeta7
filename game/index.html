@@ -19,15 +19,15 @@
     background: repeating-linear-gradient(#0000 0 2px, #0006 2px 4px),
                 radial-gradient(#0000 55%, #000c); }
   .hud { position: absolute; left: 0; right: 0; top: 0; display: flex; justify-content: space-between;
-    padding: max(10px, env(safe-area-inset-top)) 16px 0; font-size: clamp(9px, 2.2vw, 14px);
+    padding: max(10px, env(safe-area-inset-top)) 16px 0; font-size: clamp(11px, 2.2vw, 14px);
     text-shadow: 0 0 6px var(--g); pointer-events: none; }
   #msg { position: absolute; inset: 0; display: grid; place-items: center; text-align: center;
-    font-size: clamp(10px, 2.6vw, 18px); line-height: 2; text-shadow: 0 0 8px var(--g); pointer-events: none; }
+    font-size: clamp(11px, 2.6vw, 18px); line-height: 2; text-shadow: 0 0 8px var(--g); pointer-events: none; }
   #msg[hidden] { display: none; }
   .blink { animation: blink 1s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
   a.back { position: fixed; left: 16px; bottom: max(12px, env(safe-area-inset-bottom)); color: var(--g);
-    font-size: 10px; text-decoration: none; opacity: .7; z-index: 2; }
+    font-size: 12px; padding: 8px 0; text-decoration: none; opacity: .8; z-index: 2; }
   a.back:hover, a.back:focus-visible { opacity: 1; text-decoration: underline; }
   @media (prefers-reduced-motion: reduce) { .blink { animation: none; } }
 </style>
