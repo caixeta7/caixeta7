@@ -1,463 +1,62 @@
 <div align="center">
 
-<!-- MATRIX HEADER -->
+<img src="assets/header.svg" width="100%" alt="Matheus Caixeta Reis — IAM, Segurança da Informação e Automação"/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=220&section=header&text=MATHEUS%20CAIXETA%20REIS&fontSize=42&fontColor=ffffff&fontAlignY=38&desc=SOFTWARE%20ENGINEER%20%7C%20AUTOMATION%20%7C%20IDENTITY%20%7C%20SECURITY&descAlignY=58&descSize=15&animation=twinkling&color=0:0d1117,50:161b22,100:238636" width="100%"/>
-
-<img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=18&duration=2800&pause=900&color=58A6FF&center=true&vCenter=true&width=850&lines=%24+whoami;Software+Engineer+%7C+IT+Automation+%7C+Security;%24+./caixeta+--mode=engineering;%3E+Identity+%7C+Infrastructure+%7C+Automation+%7C+Security;%24+systemctl+status+caixeta.service;%3E+ACTIVE+%E2%80%94+building+reliable+systems" alt="Typing SVG" />
-
-<br>
-
-<a href="https://github.com/caixeta7">
-<img src="https://img.shields.io/badge/GitHub-caixeta7-0d1117?style=for-the-badge&logo=github&logoColor=58A6FF"/>
-</a>
-<a href="https://www.linkedin.com/in/matheus-caixeta-5287ba201/">
-<img src="https://img.shields.io/badge/LinkedIn-Matheus%20Caixeta-0d1117?style=for-the-badge&logo=linkedin&logoColor=58A6FF"/>
-</a>
-<a href="mailto:caixeta2602@gmail.com">
-<img src="https://img.shields.io/badge/Email-caixeta2602%40gmail.com-0d1117?style=for-the-badge&logo=gmail&logoColor=58A6FF"/>
-</a>
-
-<br><br>
-
-<img src="https://komarev.com/ghpvc/?username=caixeta7&label=PROFILE%20VIEWS&color=238636&style=flat-square" />
+<a href="https://matheuscaixetareis.com.br/"><img alt="Site" src="https://img.shields.io/badge/SITE-matheuscaixetareis.com.br-00ff41?style=for-the-badge&labelColor=020a04&logoColor=00ff41&logo=googlechrome"/></a>
+<a href="https://www.linkedin.com/in/matheus-caixeta-5287ba201/"><img alt="LinkedIn" src="https://img.shields.io/badge/LINKEDIN-Matheus%20Caixeta-00ff41?style=for-the-badge&labelColor=020a04&logoColor=00ff41&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI%2BPHBhdGggZmlsbD0iIzAwZmY0MSIgZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNS40NTV2Ni4yODZ6TTUuMzM3IDcuNDMzYy0xLjE0NCAwLTIuMDYzLS45MjYtMi4wNjMtMi4wNjUgMC0xLjEzOC45Mi0yLjA2MyAyLjA2My0yLjA2MyAxLjE0IDAgMi4wNjQuOTI1IDIuMDY0IDIuMDYzIDAgMS4xMzktLjkyNSAyLjA2NS0yLjA2NCAyLjA2NXptMS43ODIgMTMuMDE5SDMuNTU1VjloMy41NjR2MTEuNDUyek0yMi4yMjUgMEgxLjc3MUMuNzkyIDAgMCAuNzc0IDAgMS43Mjl2MjAuNTQyQzAgMjMuMjI3Ljc5MiAyNCAxLjc3MSAyNGgyMC40NTFDMjMuMiAyNCAyNCAyMy4yMjcgMjQgMjIuMjcxVjEuNzI5QzI0IC43NzQgMjMuMiAwIDIyLjIyMiAwaC4wMDN6Ii8%2BPC9zdmc%2B"/></a>
+<a href="mailto:caixeta2602@gmail.com"><img alt="E-mail" src="https://img.shields.io/badge/EMAIL-caixeta2602%40gmail.com-00ff41?style=for-the-badge&labelColor=020a04&logoColor=00ff41&logo=gmail"/></a>
 
 </div>
 
----
+## `$ whoami`
 
-<div align="center">
+Analista de TI em São Paulo, focado em **gestão de identidades (IAM)**, **segurança da informação** e **automação de infraestrutura Windows**.
 
-```text
-┌─────────────────────────────────────────────────────────────────────┐
-│                         SYSTEM PROFILE                              │
-├─────────────────────────────────────────────────────────────────────┤
-│                                                                     │
-│  NAME       : Matheus Caixeta Reis                                  │
-│  ROLE       : Software Engineer / IT Analyst                        │
-│  LOCATION   : São Paulo, Brazil                                     │
-│                                                                     │
-│  FOCUS      : Identity & Access · Automation · Security             │
-│  STACK      : PowerShell · Python · TypeScript · React              │
-│  INFRA      : Active Directory · Entra ID · Windows · Linux         │
-│  PRINCIPLE  : Automate what can be automated. Measure what matters. │
-│                                                                     │
-│  STATUS     : ● ONLINE                                              │
-└─────────────────────────────────────────────────────────────────────┘
-```
+No dia a dia trabalho com Active Directory, Microsoft Entra ID, PowerShell e Python — transformando tarefas manuais de suporte e operação em ferramentas que rodam sozinhas, deixam log e podem ser auditadas.
 
-</div>
+Graduado em Análise e Desenvolvimento de Sistemas · Pós-graduando em Segurança da Informação (Senac)
 
-## `> about --profile`
+## `$ stack`
 
-Profissional de TI com atuação em **automação de infraestrutura, gestão de identidades, segurança da informação e desenvolvimento de ferramentas internas**.
+<p align="center">
+  <img alt="PowerShell, Python, Bash, Windows, Linux, Azure, FastAPI, Flask, SQLite, React, TypeScript, Vite, Tailwind, Git" src="https://skillicons.dev/icons?i=powershell,python,bash,windows,linux,azure,fastapi,flask,sqlite,react,ts,vite,tailwind,git&theme=dark&perline=14"/>
+</p>
 
-Experiência prática com ambientes Windows corporativos, **Active Directory, Microsoft Entra ID, PowerShell, Python e aplicações web**, com foco na transformação de processos operacionais em soluções automatizadas, mensuráveis e auditáveis.
+| | |
+|---|---|
+| **Identidade** | `Active Directory` `Entra ID` `GPO` `RBAC` `LDAP` |
+| **Automação** | `PowerShell` `Python` `WMI/CIM` `WinRM` `Registry` |
+| **Segurança** | `Hardening` `TLS` `SPF/DMARC` `Análise de phishing` `Threat Intel` |
+| **Web** | `FastAPI` `Flask` `React` `TypeScript` |
 
-Atualmente cursando **Pós-graduação em Segurança da Informação pelo Senac**, aprofundando conhecimentos em governança de acessos, hardening e segurança de ambientes corporativos.
+## `$ ls projetos/`
 
-> **"Transformar operações manuais em sistemas confiáveis, escaláveis e orientados a dados."**
-
----
-
-## `> capabilities --list`
-
-<div align="center">
-
-| DOMAIN | TECHNOLOGIES |
-|:---:|:---|
-| `IDENTITY` | ![AD](https://img.shields.io/badge/Active%20Directory-0d1117?style=flat-square&logo=microsoft&logoColor=58A6FF) ![Entra](https://img.shields.io/badge/Entra%20ID-0d1117?style=flat-square&logo=microsoft&logoColor=58A6FF) `RBAC` `Provisioning` |
-| `AUTOMATION` | ![PowerShell](https://img.shields.io/badge/PowerShell-0d1117?style=flat-square&logo=powershell&logoColor=58A6FF) ![Python](https://img.shields.io/badge/Python-0d1117?style=flat-square&logo=python&logoColor=58A6FF) ![Bash](https://img.shields.io/badge/Bash-0d1117?style=flat-square&logo=gnubash&logoColor=58A6FF) `RunspacePool` `WinRM` |
-| `BACKEND` | ![Flask](https://img.shields.io/badge/Flask-0d1117?style=flat-square&logo=flask&logoColor=58A6FF) ![FastAPI](https://img.shields.io/badge/FastAPI-0d1117?style=flat-square&logo=fastapi&logoColor=58A6FF) `REST APIs` |
-| `FRONTEND` | ![React](https://img.shields.io/badge/React-0d1117?style=flat-square&logo=react&logoColor=58A6FF) ![TypeScript](https://img.shields.io/badge/TypeScript-0d1117?style=flat-square&logo=typescript&logoColor=58A6FF) ![Vite](https://img.shields.io/badge/Vite-0d1117?style=flat-square&logo=vite&logoColor=58A6FF) ![Tailwind](https://img.shields.io/badge/Tailwind-0d1117?style=flat-square&logo=tailwindcss&logoColor=58A6FF) |
-| `INFRASTRUCTURE` | `Windows Server` `WMI/CIM` `Registry` `GPO` `Linux` |
-| `SECURITY` | `Hardening` `TLS` `Phishing Analysis` `Threat Intelligence` |
-| `DATA` | `SQLite` `PostgreSQL` `CSV` `Excel` `Structured Logging` |
-
-</div>
-
----
-
-# `> projects --featured`
-
-### `01 / painel-inventario-corporativo`
-
-**Corporate infrastructure intelligence dashboard.**
-
-`Python` `Flask` `SQLite` `WMI` `Chart.js`
-
-Dashboard web para monitoramento de parque Windows em tempo real.
-
-- Coleta automatizada de **50+ atributos por máquina**
-- Inventário de hardware e software
-- Filtros dinâmicos e exportação CSV
-- Agendamento via Windows Task Scheduler / systemd
-- Arquitetura orientada à operação de ambientes corporativos
-
-[→ Abrir repositório](https://github.com/caixeta7/painel-inventario-corporativo)
-
----
-
-### `02 / uptime-checker-massa`
-
-**Parallel Windows fleet auditing.**
-
-`PowerShell` `RunspacePool` `Active Directory` `OpenXML`
-
-Ferramenta para auditoria operacional de grandes volumes de máquinas Windows.
-
-- Processamento paralelo com **até 80 threads**
-- Auditoria de **500+ máquinas em menos de 3 minutos**
-- Identificação de usuário logado, último boot e status de rede
-- Relatórios Excel com formatação condicional
-- Integração com Active Directory
-
-[→ Abrir repositório](https://github.com/caixeta7/uptime-checker-massa)
-
----
-
-### `03 / coletor-perfil-remoto`
-
-**Remote Windows profile migration.**
-
-`Python` `Tkinter` `SMB` `Robocopy` `Threading` `Logging`
-
-Aplicação desktop para coleta e migração de perfis Windows através da rede.
-
-- Seleção visual de origem e destino
-- Execução assíncrona
-- Progresso em tempo real
-- Tratamento de arquivos em uso
-- Tratamento de ACLs e perfis corrompidos
-
-[→ Abrir repositório](https://github.com/caixeta7/coletor-perfil-remoto)
-
----
-
-### `04 / phishcheck`
-
-**Phishing & threat intelligence analysis platform.**
-
-`Python` `FastAPI` `React` `TypeScript` `Tailwind` `Threat Intelligence`
-
-Plataforma para análise de e-mails, URLs, domínios e indicadores de reputação.
-
-- Heurísticas locais para detecção de indicadores suspeitos
-- Análise de Punycode, encurtadores, TLDs e engenharia social
-- Verificação de SPF/DMARC
-- DNS, WHOIS e reputação de IP
-- Integração com VirusTotal, Google Safe Browsing e AbuseIPDB
-- Fallback para operação sem APIs externas
-
-[→ Abrir repositório](https://github.com/caixeta7/phishcheck)
-
----
-
-### `05 / inventario-ti-dashboard`
-
-**IT asset management platform.**
-
-`React` `TypeScript` `Tailwind` `Vite` `PWA` `IndexedDB`
-
-Aplicação web para gerenciamento de ativos de tecnologia.
-
-- CRUD completo de ativos
-- Validação em tempo real
-- Filtros combinados
-- Dark mode e interface responsiva
-- Operação offline com sincronização posterior
-- Estrutura preparada para PWA
-
-[→ Abrir repositório](https://github.com/caixeta7/inventario-ti-dashboard)
-
----
-
-### `06 / echo`
-
-**Production-oriented React + TypeScript starter.**
-
-`React` `TypeScript` `Vite` `Oxlint` `ESLint` `Prettier`
-
-Base reutilizável para desenvolvimento de aplicações modernas.
-
-- Linting e formatação automatizados
-- Regras para hooks, imports e acessibilidade
-- Configuração orientada à produtividade
-- Estrutura preparada para novos projetos
-
-[→ Abrir repositório](https://github.com/caixeta7/echo)
-
----
-
-# `> automation --catalog`
-
-| PROJECT | STACK | PURPOSE |
+| Projeto | O que faz | Stack |
 |---|---|---|
-| `backup-perfil-usuario` | PowerShell | Backup de perfis, OneDrive, logging e relatório HTML |
-| `hardening-phonelink` | PowerShell | Aplicação de política de hardening |
-| `fix-tls12-dotnet` | Registry / .NET | Configuração de TLS 1.2 em aplicações .NET |
-| `upgrade-windows11-automatizado` | PowerShell | Validação e automação de upgrade |
-| `ingressar-dominio` | PowerShell | Automação de ingresso no Active Directory |
-| `assinatura-email-ad` | VBScript | Geração de assinaturas via atributos do AD |
-| `painel-impressoras` | Flask / JS | Monitoramento de impressoras de rede |
-| `biblioteca-pessoal-cli` | Python | Gerenciamento de biblioteca via CLI |
-| `otimizador-rotas` | FastAPI / OR-Tools | Otimização de rotas utilizando TSP + OSRM |
+| [**phishcheck**](https://github.com/caixeta7/phishcheck) | Analisa e-mails, URLs e domínios suspeitos: SPF/DMARC, WHOIS, reputação de IP + VirusTotal, Safe Browsing e AbuseIPDB | `FastAPI` `React` |
+| [**painel-inventario-corporativo**](https://github.com/caixeta7/painel-inventario-corporativo) | Inventário em tempo real do parque Windows — 50+ atributos por máquina via WMI, filtros e exportação CSV | `Flask` `SQLite` `WMI` |
+| [**uptime-checker-massa**](https://github.com/caixeta7/uptime-checker-massa) | Audita 500+ máquinas em menos de 3 min com RunspacePool (80 threads) e gera relatório Excel | `PowerShell` |
+| [**coletor-perfil-remoto**](https://github.com/caixeta7/coletor-perfil-remoto) | Migração de perfis Windows pela rede com interface gráfica, tratando ACLs e arquivos em uso | `Python` `Tkinter` `Robocopy` |
+| [**inventario-ti-dashboard**](https://github.com/caixeta7/inventario-ti-dashboard) | Gestão de ativos de TI offline-first, com dark mode e PWA | `React` `TypeScript` `IndexedDB` |
+| [**otimizador-rotas**](https://github.com/caixeta7/otimizador-rotas) | Otimização de rotas de entrega (~35% menos distância que heurística gulosa), com auth JWT | `FastAPI` `OR-Tools` `OSRM` |
 
----
+## `$ ls scripts/`
 
-# `> engineering --principles`
+| Script | O que faz |
+|---|---|
+| [hardening-phonelink](https://github.com/caixeta7/hardening-phonelink) | Desativa o Phone Link via policy para bloquear sincronização de celulares pessoais |
+| [fix-tls12-dotnet](https://github.com/caixeta7/fix-tls12-dotnet) | Força TLS 1.2 em aplicações .NET Framework 4.x |
+| [ingressar-dominio](https://github.com/caixeta7/ingressar-dominio) | Renomeia e ingressa máquinas no AD com validação de DNS |
+| [upgrade-windows11-automatizado](https://github.com/caixeta7/upgrade-windows11-automatizado) | Valida TPM 2.0, Secure Boot e disco antes do upgrade silencioso |
+| [assinatura-email-ad](https://github.com/caixeta7/assinatura-email-ad) | Gera assinatura do Outlook a partir dos atributos do usuário no AD |
 
-```text
-┌───────────────────────┐
-│ SOFTWARE ENGINEERING  │
-├───────────────────────┤
-│ Clean Architecture    │
-│ Domain-Driven Design  │
-│ SOLID                 │
-│ Type Safety           │
-│ Automated Testing     │
-│ Structured Logging    │
-│ Concurrent Processing │
-│ REST APIs             │
-│ Distributed Systems   │
-└───────────────────────┘
-```
-
-Áreas atualmente exploradas:
-
-`Rust` · `Kubernetes` · `Distributed Systems` · `Chaos Engineering`
-
----
-
-# `> github --metrics`
+## `$ git stats`
 
 <div align="center">
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=caixeta7&show_icons=true&theme=github_dark&hide_border=true&count_private=true&include_all_commits=true&locale=pt-br&custom_title=System%20Metrics"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=caixeta7&show_icons=true&theme=github_dark&hide_border=true&locale=pt-br&hide_title=true&hide=contribs,issues&hide_rank=true&icon_color=00ff41"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=caixeta7&layout=compact&theme=github_dark&hide_border=true&langs_count=6&locale=pt-br&hide_title=true"/>
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=caixeta7&layout=compact&theme=github_dark&hide_border=true&langs_count=10&locale=pt-br&custom_title=Tech%20Stack"/>
-
-<br>
-
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=caixeta7&theme=github-dark&hide_border=true&date_format=j%20M%5B%20Y%5D&background=0d1117&border=30363d&stroke=58a6ff&ring=58a6ff&fire=58a6ff&currStreakLabel=58a6ff&sideNums=c9d1d9&currStreakNum=58a6ff&sideLabels=c9d1d9"/>
+<a href="https://caixeta7.github.io/caixeta7/game/"><img src="assets/footer.svg" width="100%" alt="Jogar Caixeta Invaders"/></a>
 
 </div>
-
----
-
-# `> activity --live`
-
-<!--START_SECTION:activity-->
-<!--STATS_UPDATED: 2026-10-08 09:35:17 UTC -->
-<!--STATS_UPDATED: 2026-10-07 09:25:55 UTC -->
-<!--STATS_UPDATED: 2026-10-06 09:29:47 UTC -->
-<!--STATS_UPDATED: 2026-10-05 09:40:29 UTC -->
-<!--STATS_UPDATED: 2026-10-04 08:53:29 UTC -->
-<!--STATS_UPDATED: 2026-10-03 08:37:06 UTC -->
-<!--STATS_UPDATED: 2026-10-02 09:04:41 UTC -->
-<!--STATS_UPDATED: 2026-10-01 09:29:24 UTC -->
-<!--STATS_UPDATED: 2026-09-30 09:03:49 UTC -->
-<!--STATS_UPDATED: 2026-09-29 09:09:31 UTC -->
-<!--STATS_UPDATED: 2026-09-28 09:00:47 UTC -->
-<!--STATS_UPDATED: 2026-09-27 08:37:35 UTC -->
-<!--STATS_UPDATED: 2026-09-26 08:02:32 UTC -->
-<!--STATS_UPDATED: 2026-09-25 08:14:19 UTC -->
-<!--STATS_UPDATED: 2026-09-24 07:51:40 UTC -->
-<!--STATS_UPDATED: 2026-09-23 08:00:15 UTC -->
-<!--STATS_UPDATED: 2026-09-22 07:58:58 UTC -->
-<!--STATS_UPDATED: 2026-09-21 08:15:27 UTC -->
-<!--STATS_UPDATED: 2026-09-20 07:57:19 UTC -->
-<!--STATS_UPDATED: 2026-09-19 07:34:48 UTC -->
-<!--STATS_UPDATED: 2026-09-18 07:39:20 UTC -->
-<!--STATS_UPDATED: 2026-09-17 08:01:04 UTC -->
-<!--STATS_UPDATED: 2026-09-16 07:57:03 UTC -->
-<!--STATS_UPDATED: 2026-09-15 08:03:56 UTC -->
-<!--STATS_UPDATED: 2026-09-14 08:09:36 UTC -->
-<!--STATS_UPDATED: 2026-09-12 07:22:56 UTC -->
-<!--STATS_UPDATED: 2026-09-11 07:31:33 UTC -->
-<!--STATS_UPDATED: 2026-09-10 07:32:45 UTC -->
-<!--STATS_UPDATED: 2026-09-09 07:36:24 UTC -->
-<!--STATS_UPDATED: 2026-09-08 07:28:27 UTC -->
-<!--STATS_UPDATED: 2026-09-07 07:35:32 UTC -->
-<!--STATS_UPDATED: 2026-09-06 07:20:49 UTC -->
-<!--STATS_UPDATED: 2026-09-05 07:08:49 UTC -->
-<!--STATS_UPDATED: 2026-09-04 07:27:23 UTC -->
-<!--STATS_UPDATED: 2026-09-03 07:25:16 UTC -->
-<!--STATS_UPDATED: 2026-09-02 07:21:41 UTC -->
-<!--STATS_UPDATED: 2026-09-01 08:00:57 UTC -->
-<!--STATS_UPDATED: 2026-08-31 08:57:57 UTC -->
-<!--STATS_UPDATED: 2026-08-30 08:34:59 UTC -->
-<!--STATS_UPDATED: 2026-08-29 09:27:06 UTC -->
-<!-- Esta seção é atualizada automaticamente via GitHub Actions -->
-<!--END_SECTION:activity-->
-
----
-
-<div align="center">
-
-```text
-╔══════════════════════════════════════════════════════════════════════╗
-║                                                                      ║
-║   AUTOMATE.  SECURE.  ENGINEER.  OBSERVE.  IMPROVE.                  ║
-║                                                                      ║
-║   "Good systems don't depend on heroics."                            ║
-║                                                                      ║
-╚══════════════════════════════════════════════════════════════════════╝
-```
-
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&animation=twinkling&color=0:238636,50:161b22,100:0d1117" width="100%"/>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
