@@ -55,7 +55,7 @@ No dia a dia trabalho com Active Directory, Microsoft Entra ID, PowerShell e Pyt
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=caixeta7&show_icons=true&theme=github_dark&hide_border=true&locale=pt-br&hide_title=true&hide=contribs"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=caixeta7&show_icons=true&theme=github_dark&hide_border=true&locale=pt-br&hide_title=true&hide=contribs,issues&hide_rank=true&icon_color=00ff41"/>
 <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=caixeta7&layout=compact&theme=github_dark&hide_border=true&langs_count=6&locale=pt-br&hide_title=true"/>
 
 <img src="assets/footer.svg" width="100%" alt=""/>
