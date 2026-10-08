@@ -54,8 +54,8 @@ Graduado em Análise e Desenvolvimento de Sistemas · Pós-graduando em Seguran�
 
 <div align="center">
 
-<img height="165" src="https://github-readme-stats.vercel.app/api?username=caixeta7&show_icons=true&theme=github_dark&hide_border=true&locale=pt-br&hide_title=true&hide=contribs,issues&hide_rank=true&icon_color=00ff41"/>
-<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=caixeta7&layout=compact&theme=github_dark&hide_border=true&langs_count=6&locale=pt-br&hide_title=true"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api?username=caixeta7&show_icons=true&theme=github_dark&hide_border=true&locale=pt-br&hide_title=true&disable_animations=true&hide=contribs,issues&hide_rank=true&icon_color=00ff41"/>
+<img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=caixeta7&layout=compact&theme=github_dark&hide_border=true&langs_count=6&locale=pt-br&hide_title=true&disable_animations=true"/>
 
 <a href="https://caixeta7.github.io/caixeta7/game/"><img src="assets/footer.svg" width="100%" alt="Jogar Caixeta Invaders"/></a>
 
