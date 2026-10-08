@@ -72,6 +72,8 @@ def header(w=960, h=300):
     lock = pixels(LOCK, x0, 80, size)
 
     tagline = "$ whoami → matheus caixeta reis :: iam · segurança · automação"
+    tlen = len(tagline) * 10  # textLength fixa a largura -> cursor sempre colado no fim
+    tx = (w - tlen - 16) // 2
     return f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {w} {h}" width="{w}" height="{h}" role="img" aria-label="Matheus Caixeta Reis — IAM, Segurança da Informação e Automação">
 <style>
   .drop {{ font: 14px "MS Gothic","Noto Sans Mono CJK JP","Osaka",monospace; animation: fall linear infinite; }}
@@ -88,8 +90,6 @@ def header(w=960, h=300):
   .lock rect {{ fill: {GREEN}; }} .lock {{ animation: pulse 2.4s ease-in-out infinite; filter: drop-shadow(0 0 6px {GREEN}); }}
   @keyframes pulse {{ 50% {{ opacity: .55 }} }}
   .tag {{ font: 600 17px "JetBrains Mono","Cascadia Code",Consolas,monospace; fill: {GREEN}; }}
-  .cover {{ fill: {BG}; animation: uncover 4s steps(40); }}
-  @keyframes uncover {{ 0%,25% {{ transform: translateX(-{w}px) }} 100% {{ transform: translateX(0) }} }}
   .cursor {{ fill: {GREEN}; animation: blink 1s steps(1) infinite; }}
   @keyframes blink {{ 50% {{ opacity: 0 }} }}
   @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; }} }}
@@ -100,13 +100,12 @@ def header(w=960, h=300):
 </defs>
 <rect width="{w}" height="{h}" fill="{BG}"/>
 <g opacity=".45">{"".join(rain)}</g>
-<rect x="{x0 - 40}" y="56" width="{total + 80}" height="118" fill="{BG}" fill-opacity=".82" stroke="{GREEN}" stroke-width="2" stroke-dasharray="10 6"/>
+<rect x="{x0 - 40}" y="56" width="{total + 80}" height="138" fill="{BG}" fill-opacity=".82" stroke="{GREEN}" stroke-width="2" stroke-dasharray="10 6"/>
 <g class="lock">{lock}</g>
 <g class="ghost-r">{name}</g><g class="ghost-c">{name}</g>
 <g class="name">{name}</g>
-<text class="tag" x="{w // 2}" y="226" text-anchor="middle">{tagline}</text>
-<rect class="cover" x="{w}" y="200" width="{w}" height="40"/>
-<rect class="cursor" x="{w // 2 + 330}" y="211" width="10" height="20"/>
+<text class="tag" x="{tx}" y="226" textLength="{tlen}">{tagline}</text>
+<rect class="cursor" x="{tx + tlen + 6}" y="211" width="10" height="20"/>
 <rect width="{w}" height="{h}" fill="url(#scan)"/>
 <rect width="{w}" height="{h}" fill="url(#vig)"/>
 </svg>'''
