@@ -82,12 +82,14 @@ def header(w=960, h=300):
   .ghost-r {{ animation: gr 5s steps(1) infinite; }} .ghost-c {{ animation: gc 5s steps(1) infinite; }}
   @keyframes gr {{ 0%,86%,100% {{ opacity:0; transform:none }} 87% {{ opacity:.9; transform:translate(-6px,2px) }} 89% {{ opacity:.9; transform:translate(4px,-3px) }} 91% {{ opacity:0 }} }}
   @keyframes gc {{ 0%,86%,100% {{ opacity:0; transform:none }} 87% {{ opacity:.9; transform:translate(6px,-2px) }} 89% {{ opacity:.9; transform:translate(-4px,3px) }} 91% {{ opacity:0 }} }}
-  .name {{ animation: boot 1.2s steps(6) both, jitter 5s steps(1) infinite 1.2s; filter: drop-shadow(0 0 6px {GREEN}); }}
+  .name {{ animation: boot 1.2s steps(6), jitter 5s steps(1) infinite 1.2s; filter: drop-shadow(0 0 6px {GREEN}); }}
   @keyframes boot {{ 0% {{ opacity:0 }} 30% {{ opacity:1 }} 45% {{ opacity:.2 }} 60%,100% {{ opacity:1 }} }}
   @keyframes jitter {{ 0%,86%,92%,100% {{ transform:none }} 88% {{ transform:translateX(3px) skewX(-8deg) }} 90% {{ transform:translateX(-2px) }} }}
   .lock rect {{ fill: {GREEN}; }} .lock {{ animation: pulse 2.4s ease-in-out infinite; filter: drop-shadow(0 0 6px {GREEN}); }}
   @keyframes pulse {{ 50% {{ opacity: .55 }} }}
   .tag {{ font: 600 17px "JetBrains Mono","Cascadia Code",Consolas,monospace; fill: {GREEN}; }}
+  .cover {{ fill: {BG}; animation: uncover 4s steps(40); }}
+  @keyframes uncover {{ 0%,25% {{ transform: translateX(0) }} 100% {{ transform: translateX({w}px) }} }}
   .cursor {{ fill: {GREEN}; animation: blink 1s steps(1) infinite; }}
   @keyframes blink {{ 50% {{ opacity: 0 }} }}
   @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; }} }}
@@ -95,7 +97,6 @@ def header(w=960, h=300):
 <defs>
   <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="2" fill="#000" fill-opacity=".35"/></pattern>
   <radialGradient id="vig" cx="50%" cy="50%" r="70%"><stop offset="55%" stop-color="#000" stop-opacity="0"/><stop offset="100%" stop-color="#000" stop-opacity=".85"/></radialGradient>
-  <clipPath id="type"><rect x="0" y="200" width="0" height="40"><animate attributeName="width" from="0" to="{w}" begin="1.2s" dur="3.5s" fill="freeze" calcMode="discrete" values="{';'.join(str(int(w * k / 40)) for k in range(41))}"/></rect></clipPath>
 </defs>
 <rect width="{w}" height="{h}" fill="{BG}"/>
 <g opacity=".45">{"".join(rain)}</g>
@@ -103,7 +104,8 @@ def header(w=960, h=300):
 <g class="lock">{lock}</g>
 <g class="ghost-r">{name}</g><g class="ghost-c">{name}</g>
 <g class="name">{name}</g>
-<g clip-path="url(#type)"><text class="tag" x="{w // 2}" y="226" text-anchor="middle">{tagline}</text></g>
+<text class="tag" x="{w // 2}" y="226" text-anchor="middle">{tagline}</text>
+<rect class="cover" x="0" y="200" width="{w}" height="40"/>
 <rect class="cursor" x="{w // 2 + 330}" y="211" width="10" height="20"/>
 <rect width="{w}" height="{h}" fill="url(#scan)"/>
 <rect width="{w}" height="{h}" fill="url(#vig)"/>
