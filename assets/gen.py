@@ -89,7 +89,7 @@ def header(w=960, h=300):
   @keyframes pulse {{ 50% {{ opacity: .55 }} }}
   .tag {{ font: 600 17px "JetBrains Mono","Cascadia Code",Consolas,monospace; fill: {GREEN}; }}
   .cover {{ fill: {BG}; animation: uncover 4s steps(40); }}
-  @keyframes uncover {{ 0%,25% {{ transform: translateX(0) }} 100% {{ transform: translateX({w}px) }} }}
+  @keyframes uncover {{ 0%,25% {{ transform: translateX(-{w}px) }} 100% {{ transform: translateX(0) }} }}
   .cursor {{ fill: {GREEN}; animation: blink 1s steps(1) infinite; }}
   @keyframes blink {{ 50% {{ opacity: 0 }} }}
   @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; }} }}
@@ -105,7 +105,7 @@ def header(w=960, h=300):
 <g class="ghost-r">{name}</g><g class="ghost-c">{name}</g>
 <g class="name">{name}</g>
 <text class="tag" x="{w // 2}" y="226" text-anchor="middle">{tagline}</text>
-<rect class="cover" x="0" y="200" width="{w}" height="40"/>
+<rect class="cover" x="{w}" y="200" width="{w}" height="40"/>
 <rect class="cursor" x="{w // 2 + 330}" y="211" width="10" height="20"/>
 <rect width="{w}" height="{h}" fill="url(#scan)"/>
 <rect width="{w}" height="{h}" fill="url(#vig)"/>
